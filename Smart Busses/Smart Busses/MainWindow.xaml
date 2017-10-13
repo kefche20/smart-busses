@@ -3,10 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Smart_Busses"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <m:Map x:Name="map" CredentialsProvider="AnuLRIgr5OwRxvlkLmflp60HUX2TrBVQFTEgyhzZZzMlBkMSYvp8Ey0FwajcK6Dw" Width="234" Height="234" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0">
+
+        </m:Map>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="418,118,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Window>

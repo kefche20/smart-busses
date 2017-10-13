@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Maps.MapControl.WPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,25 @@ namespace Smart_Busses
     /// </summary>
     public partial class MainWindow : Window
     {
+        string[] items;
         public MainWindow()
         {
             InitializeComponent();
+
+            Station.InitStations();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MapPolyline poly = new MapPolyline();
+            var lc = new LocationCollection();
+            poly.Stroke = new SolidColorBrush(Colors.Blue);
+            poly.StrokeThickness = 5;
+            poly.Opacity = 0.7;
+            foreach (var item in items)
+            {
+                lc.Add(new Location(item.lat, item.lon));
+            }
+            map.Children.Add(poly);
         }
     }
 }
