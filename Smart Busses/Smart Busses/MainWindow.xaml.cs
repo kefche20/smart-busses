@@ -21,7 +21,7 @@ namespace Smart_Busses
     /// </summary>
     public partial class MainWindow : Window
     {
-        string[] items;
+        Station[] items;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Smart_Busses
             poly.Opacity = 0.7;
             foreach (var item in items)
             {
-                lc.Add(new Location(item.lat, item.lon));
+                lc.Add(new Microsoft.Maps.MapControl.WPF.Location(item.location.x, item.location.y));
             }
             map.Children.Add(poly);
         }
